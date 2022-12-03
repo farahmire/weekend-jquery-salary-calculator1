@@ -1,37 +1,17 @@
-$(document).ready(onReady);
-
 /// set template array with object values
 let employees = [ 
-{
-    first: "Farah",
-    last: "Mire",
-    id: 828864,
-    title: "Software Engineer",
-    annualSalary: 70000
-},
-{
-    first: "John",
-    last: "Doe",
-    id: 65324,
-    title: "Firefighter",
-    annualSalary: 60000
-},
-{
-    first: "Justin",
-    last: "Louie",
-    id: 20289,
-    title: "Doctor",
-    annualSalary: 15500
-}
-]
+
+];
+
+$(document).ready(onReady);
 // set on ready function for DOM
 // make click handler events for when add employee button/ delete is pressed
 function onReady(){
     // render here as well
     renderEmployeeList()
-    console.log('DOM IS READY')
-    $('#addSubmit').on('click', addEmployee)
-    $('body').on('click','.deleteEmployee', deleteEmployees)
+    console.log('DOM IS READY');
+    $('.addSubmitButton').on('click', addSubmit);
+    $('body').on('click','.deleteEmployee', deleteEmployees);
     
 
 
@@ -41,14 +21,11 @@ function onReady(){
 //// render function
 function renderEmployeeList() {
     $('#employeeList').empty();
-    // $('#forecastList').append(`
-    //   <li>${forecasts[0].date}: ${forecasts[0].lowTemp} to ${forecasts[0].hiTemp} degrees</li>
-    // `)
     for (let i = 0; i < employees.length; i++) {
     
         $('#employeeList').append(`
           <li> <span class="idSpan">
-            ${employees[i].id}</span>: ${employees[i].first} ${employees[i].last} ${employees[i].title} ${employees[i].annualSalary} 
+            ${employees[i].first}</span>: ${employees[i].last} ${employees[i].id} ${employees[i].title} ${employees[i].annualSalary} 
             <button class="deleteEmployees"></button>
           </li>
         `)
@@ -84,7 +61,7 @@ function deleteEmployees() {
 
 /// here i should make the function for click event submit
 
-function addEmployee(){
+function addSubmit(){
     /// get input values
     let addFirst = $('#theFirstName').val()
     let addLast = $('#theLastName').val()
@@ -111,12 +88,13 @@ renderEmployeeList()
 
 
 
-//// rest the inputs nack into empy strings 
-$('#theFirstName').val()
-$('#theLastName').val()
-$('#theID').val()
-$('#theTitle').val()
-$('#theAnnualSalary').val()
+//// rest the inputs nack into empty strings 
+$('#theFirstName').val('')
+$('#theLastName').val('')
+$('#theID').val('')
+$('#theTitle').val('')
+$('#theAnnualSalary').val('')
 
 }
 
+}
