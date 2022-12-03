@@ -19,16 +19,16 @@
     <input id="theID" type="number" placeholder="ID">
     <input id="theTitle" type="text" placeholder="Title">
     <input id="theAnnualSalary" type="text" placeholder="Annual Salary">
-    <div class="box">
-        <div>
-        <button class="addSubmit"><span>Submit</span></button>
-        </div>
-      </div>
+   <button id="addSubmit">Submit</button>
+      
 
 
     <h2> Employees </h2>
 
-    <table>
+    <ul
+    id="employeeList">
+
+    <table >
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
@@ -44,6 +44,9 @@
             <td>Germany</td>
             <td>Germany</td>
             <td>Germany</td>
+            <td>
+                <button id="deleteEmployee"> Delete</button>
+            </td>
         </tr>
         <tr>
             <td>Alfreds Futterkiste</td>
@@ -67,6 +70,7 @@
         </tr>
         <tr></tr>
     </table>
+</ul>
 
 </body>
 
